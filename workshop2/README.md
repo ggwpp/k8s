@@ -40,3 +40,21 @@ Tag image from other image.
 ```sh
 $ docker tag workshop2 workshop2:v1
 ```
+
+## Push to container registry
+We can push docker image to container registry, place we can keep docker image.
+We push by run `docker push <docker-image>`.
+For specific container registry, we can do by naming docker image with each registry format. Please learn more from container registry.
+
+Today we will use GCR(Google Container Registry).
+For GCR we have to tag docker image with `[HOSTNAME]/[PROJECT-ID]/[IMAGE]:[TAG]`.
+So it gonna be like this `asia.gcr.io/patipat-workshop/workshop2:v1`
+
+1. Tag your image
+```sh
+docker tag workshop2:v1 asia.gcr.io/patipat-workshop/workshop2:v1
+```
+2. Push docker image
+```sh
+docker push asia.gcr.io/patipat-workshop/workshop2:v1
+```

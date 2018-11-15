@@ -17,8 +17,6 @@ func Index(w http.ResponseWriter, r *http.Request) {
 }
 
 func TodoIndex(w http.ResponseWriter, r *http.Request) {
-	// os.Setenv("DB", "admin:password@11.57.69.69")
-	// os.Setenv("APIKEY", "P99zE8YiLm")
 	todos := Todos{
 		Todo{Version: "1.0.0",
 			Hostname: getHostname(),

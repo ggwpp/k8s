@@ -3,22 +3,22 @@ kind: StatefulSet
 metadata:
   name: grean-seminar
 spec:
-  serviceName: grean-tomcat
+  serviceName: workshop3
   replicas: 1
   selector:
     matchLabels:
-      app: grean-tomcat
+      app: workshop3
   template:
     metadata:
       labels:
-        app: grean-tomcat
+        app: workshop3
     spec:
       containers:
-      - name: grean-tomcat
+      - name: workshop3
         image: tomcat
         ports:
         - containerPort: 8080
-          name: tomcat-app
+          name: workshop3-app
         volumeMounts:
         - name: persistent-data
           mountPath: /usr/local/tomcat/webapps/persistent-data
