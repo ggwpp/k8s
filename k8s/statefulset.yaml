@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: grean-seminar
+spec:
+  serviceName: grean-tomcat
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grean-tomcat
+  template:
+    metadata:
+      labels:
+        app: grean-tomcat
+    spec:
+      containers:
+      - name: grean-tomcat
+        image: tomcat
+        ports:
+        - containerPort: 8080
+          name: tomcat-app
+        volumeMounts:
+        - name: persistent-data
+          mountPath: /usr/local/tomcat/webapps/persistent-data
+  volumeClaimTemplates:
+  - metadata:
+      name: persistent-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi

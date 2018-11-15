@@ -1,0 +1,17 @@
+FROM golang:1.10-alpine as builder
+LABEL maintainer="Grean-Developers-Family"
+
+RUN apk add --no-cache git mercurial \
+    && go get github.com/gorilla/mux \
+    && apk del git mercurial
+
+WORKDIR /go/src/app
+ADD src/ .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
+# RUN go build 
+
+FROM alpine:latest
+WORKDIR /go/src/app
+COPY --from=builder /go/src/app/app .
+CMD [ "./app" ]
+EXPOSE 8080

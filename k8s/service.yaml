@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  ### Can change name here
+  name: grean-serminar-service
+spec:
+  selector:
+  ### for this must same as deployment
+    app: grean-tomcat
+  ports:
+  - protocol: TCP
+  ### Port Loadbalancer, targetPort container Port
+    port: 80
+    targetPort: 8080
+  type: LoadBalancer
