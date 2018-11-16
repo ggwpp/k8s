@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: grean-seminar
+  name: workshop3-stateful
 spec:
-  serviceName: workshop3
+  serviceName: workshop3-stateful
   replicas: 1
   selector:
     matchLabels:
-      app: workshop3
+      app: workshop3-stateful
   template:
     metadata:
       labels:
-        app: workshop3
+        app: workshop3-stateful
     spec:
       containers:
-      - name: workshop3
+      - name: workshop3-stateful
         image: tomcat
         ports:
         - containerPort: 8080

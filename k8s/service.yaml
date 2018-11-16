@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: workshop3
+  name: workshop3-stateful
 spec:
   selector:
-    app: workshop3
+    app: workshop3-stateful
   ports:
   - protocol: TCP
     port: 80
