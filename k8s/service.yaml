@@ -1,15 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  ### Can change name here
   name: workshop3
 spec:
   selector:
-  ### for this must same as deployment
     app: workshop3
   ports:
   - protocol: TCP
-  ### Port Loadbalancer, targetPort container Port
     port: 80
-    targetPort: workshop3
+    targetPort: workshop3-app
   type: LoadBalancer

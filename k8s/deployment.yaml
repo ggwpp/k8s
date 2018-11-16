@@ -1,10 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  ### can change this name
   name: workshop3
-  ###
-  ### For labels need to be the same all in this file.
   labels:
     app: workshop3
 spec:
@@ -19,9 +16,7 @@ spec:
     spec:
       containers:
       - name: workshop3
-        ### Change image here
-        image: tomcat
-        ###
+        image: asia.gcr.io/workshop-mfec/workshop3:v1
         # env:
         #   - name: DB
         #     valueFrom:

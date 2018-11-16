@@ -21,10 +21,10 @@ func TodoIndex(w http.ResponseWriter, r *http.Request) {
 		Todo{Version: "1.0.0",
 			Hostname: getHostname(),
 			Time:     time.Now(),
-			// Db:       os.Getenv("DB"),
-			// Apikey:   os.Getenv("APIKEY"),
-			Db:     "admin:password@11.57.69.69",
-			Apikey: "P99zE8YiLm",
+			Db:       os.Getenv("DB"),
+			Apikey:   os.Getenv("APIKEY"),
+			// Db:     "user:password@mongo.com",
+			// Apikey: "P@ssw0rd-key",
 		},
 	}
 	//add commanet
