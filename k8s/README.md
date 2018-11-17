@@ -40,7 +40,7 @@ kubectl -n <namespace> create -f k8s/service.yaml
 ```
 To check service status
 ```sh
-kubectl get service # can add -w to watch changes and ctrl+c to exit
+kubectl get -n <namespace> service # can add -w to watch changes and ctrl+c to exit
 ```
 When you see the `external IP` you can use it to access you app.:tada:
 
@@ -60,7 +60,7 @@ After finish, try refresh browser and see the result.
 ### Logging
 We can get logs from pod by run
 ```sh
-kubectl logs <pod name>
+kubectl -n <namespace> logs <pod name>
 ```
 We can also add paramater `-f` to follow new comming logs.
 Note that this logs will come from stdout/stderror only.
