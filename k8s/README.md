@@ -120,7 +120,7 @@ docker push asia.gcr.io/workshop-mfec/workshop3:v2
 
 Now our image is ready. Next we'll update `deployment`
 ```sh
-kubectl set image deployment workshop3 workshop3=asia.gcr.io/workshop-mfec/workshop3:v1
+kubectl set image deployment/workshop3 workshop3=asia.gcr.io/workshop-mfec/workshop3:v1
 ```
 We can check status by
 ```sh
