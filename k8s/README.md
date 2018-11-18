@@ -120,11 +120,11 @@ docker push asia.gcr.io/workshop-mfec/workshop3:v2
 
 Now our image is ready. Next we'll update `deployment`
 ```sh
-kubectl set image deployment/workshop3 workshop3=asia.gcr.io/workshop-mfec/workshop3:v1
+kubectl -n <namespace> set image deployment/workshop3 workshop3=asia.gcr.io/workshop-mfec/workshop3:v1
 ```
 We can check status by
 ```sh
-kubectl rollout status deployment workshop3
+kubectl -n <namespace> rollout status deployment workshop3
 ```
 
 When k8s've updated already, go to your service and check result.
